@@ -1,0 +1,34 @@
+SVM-light Version V3.50
+0 # kernel type
+1 # kernel parameter -d 
+1 # kernel parameter -g 
+1 # kernel parameter -s 
+0 # kernel parameter -r 
+EmptyParam # kernel parameter -u 
+0 # highest feature index 
+23 # number of training documents 
+24 # number of support vectors plus 1 
+0 # threshold b 
+-1.#INF 
+1.#INF 
+-1.#INF 
+1.#INF 
+-1.#INF 
+1.#INF 
+-1.#INF 
+1.#INF 
+-1.#INF 
+1.#INF 
+-1.#INF 
+1.#INF 
+-1.#INF 
+1.#INF 
+-1.#INF 
+1.#INF 
+-1.#INF 
+1.#INF 
+-1.#INF 
+-1.#INF 
+-1.#INF 
+-1.#INF 
+-1.#INF 

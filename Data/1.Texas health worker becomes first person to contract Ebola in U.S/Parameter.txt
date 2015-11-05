@@ -1,0 +1,5 @@
+comment quantity: 789
+community: yahoo
+News type: Health
+Popularity: popular
+News topic: Texas health worker becomes first person to contract Ebola in U.S

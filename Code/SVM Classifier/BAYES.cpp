@@ -1,0 +1,27 @@
+// BAYES.cpp: implementation of the CBAYES class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "TextClassify.h"
+#include "BAYES.h"
+
+#ifdef _DEBUG
+#undef THIS_FILE
+static char THIS_FILE[]=__FILE__;
+#define new DEBUG_NEW
+#endif
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+CBAYES::CBAYES()
+{
+
+}
+
+CBAYES::~CBAYES()
+{
+
+}

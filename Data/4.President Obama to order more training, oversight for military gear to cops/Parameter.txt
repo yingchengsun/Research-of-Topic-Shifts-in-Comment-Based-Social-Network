@@ -1,0 +1,5 @@
+comment quantity: 5748
+community: yahoo
+News type: Politic
+Popularity: popular
+News topic: President Obama to order more training, oversight for military gear to cops

@@ -1,0 +1,5 @@
+comment quantity: 201
+community: yahoo
+News type: Politic
+Popularity: not popular
+News topic: Obama considering Ashton Carter, others for next defense secretary

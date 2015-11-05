@@ -1,0 +1,590 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TextClassify.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\TextClassify.ico"
+IDR_TEXTCLTYPE          ICON    DISCARDABLE     "res\\TextClassifyDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "Classifier(&C)"
+    BEGIN
+        MENUITEM "训练KNN分类器(&K)",           ID_MAIN_TRAINKNN
+        MENUITEM "训练SVM分类器(&S)",           ID_MAIN_TRAINSVM
+        MENUITEM "训练BAYES分类器(&B)",         ID_MAIN_TRAINBAYES
+        MENUITEM "打开分类模型(&O)",            ID_MAIN_OPENMODEL
+        MENUITEM SEPARATOR
+        MENUITEM "开始分类(&T)",                ID_MAIN_TEST
+        MENUITEM "查看结果(&V)",                ID_MAIN_RESULTS
+        MENUITEM SEPARATOR
+        MENUITEM "分词(&W)",                    ID_TOOLS_WORDSEG
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "Edit(&E)"
+    BEGIN
+        MENUITEM "撤消(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "剪切(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "复制(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "粘贴(&P)\tCtrl+V",            ID_EDIT_PASTE
+    END
+    POPUP "Look (&V)"
+    BEGIN
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+    END
+    POPUP "Help (&H)"
+    BEGIN
+        MENUITEM "关于 TextClassify(&A)...",    ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 TextClassify"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "TextClassify 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2007",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_WORDSEG DIALOG DISCARDABLE  0, 0, 301, 120
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "中文分词"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,179,94,50,14
+    PUSHBUTTON      "取消",IDCANCEL,239,94,50,14
+    LTEXT           "目标文件路径",IDC_STATIC,17,26,49,8
+    LTEXT           "结果文件路径",IDC_STATIC,17,42,49,8
+    EDITTEXT        IDC_EDIT_SOURCE,71,23,192,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TARGET,71,40,192,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE1,267,23,17,14
+    PUSHBUTTON      "...",IDC_BTN_BROWSE2,267,40,17,14
+    GROUPBOX        "路径设置",IDC_STATIC,12,10,278,51
+    GROUPBOX        "Parameter settings",IDC_STATIC,12,63,278,27
+    CONTROL         "目标文件包含多个文件",IDC_MULTI_DOCS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,76,96,10
+    CONTROL         "去掉停用",IDC_DEL_STOPWORDS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,236,76,48,10
+END
+
+IDD_TRAINPARAMS DIALOG DISCARDABLE  0, 0, 317, 132
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Parameter settings"
+FONT 9, "宋体"
+BEGIN
+    GROUPBOX        "Training directory",IDC_STATIC,11,9,294,50
+    LTEXT           "Training documentation directory:",IDC_STATIC,17,24,53,8
+    LTEXT           "Training results directory:",IDC_STATIC,17,41,53,8
+    EDITTEXT        IDC_TXT_TRAIN_DIR,72,21,196,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TXT_RESULT,72,38,196,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_TRAIN,272,21,17,14
+    PUSHBUTTON      "...",IDC_BTN_RESULTS,272,38,17,14
+    GROUPBOX        "Feature extraction function",IDC_STATIC,11,61,189,60
+    CONTROL         "Information Gain",IDC_RADIO_FS_IG,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,15,74,48,10
+    CONTROL         "Mutual Information",IDC_RADIO_FS_MI,"Button",BS_AUTORADIOBUTTON,15,
+                    89,40,10
+    CONTROL         "Expected Cross Entropy",IDC_RADIO_FS_CE,"Button",BS_AUTORADIOBUTTON,
+                    15,104,56,10
+    CONTROL         "X^2 Statistics",IDC_RADIO_FS_X2,"Button",BS_AUTORADIOBUTTON,
+                    118,74,44,10
+    CONTROL         "Text weight of evidence ",IDC_RADIO_FS_WE,"Button",
+                    BS_AUTORADIOBUTTON,118,89,68,10
+    CONTROL         "Right information gain",IDC_RADIO_FS_XXMODE,"Button",
+                    BS_AUTORADIOBUTTON,118,104,64,10
+    GROUPBOX        "Feature space",IDC_STATIC,204,61,102,30
+    LTEXT           "Dimension：",IDC_STATIC,216,74,25,8
+    EDITTEXT        IDC_TXT_WORD_SIZE,242,71,50,14,ES_AUTOHSCROLL
+    GROUPBOX        "Classification features",IDC_STATIC,204,93,101,107
+    /*CONTROL         "TF*IDF",IDC_RADIO_WEIGHT,"Button",BS_AUTORADIOBUTTON|
+                    WS_GROUP,211,105,39,10
+    CONTROL         "nCS-nRS",IDC_RADIO_WEIGHT2,"Button",BS_AUTORADIOBUTTON  
+                    ,255,105,45,10*/
+    CONTROL         "Layer",IDC_WEIGHT1,"Button",BS_AUTOCHECKBOX|WS_TABSTOP
+	                 ,211,105,39,10
+	CONTROL         "Length",IDC_WEIGHT2,"Button",BS_AUTOCHECKBOX|WS_TABSTOP
+	                 ,211,125,39,10
+    CONTROL         "Field",IDC_WEIGHT3,"Button",BS_AUTOCHECKBOX|WS_TABSTOP
+	                 ,211,145,39,10
+    CONTROL         "Similarity",IDC_WEIGHT4,"Button",BS_AUTOCHECKBOX|WS_TABSTOP
+	                 ,211,165,39,10
+    CONTROL         "TF*IDF",IDC_WEIGHT5,"Button",BS_AUTOCHECKBOX|WS_TABSTOP
+	                 ,211,185,39,10
+	GROUPBOX        "Field",IDC_STATIC,15,150,185,60
+   /* CONTROL         "UKS",IDC_WEIGHT3,"Button",BS_AUTOCHECKBOX|WS_TABSTOP
+	                 ,211,145,39,10*/
+	//CONTROl         "URL",IDC_URL,"Button",BS_AUTOCHECKBOX|WS_TABSTOP
+	//                 ,25,170,39,10
+	LTEXT           "UKS:k=",IDC_STATIC,25,190,39,10
+    EDITTEXT        IDC_UKS_K,51,190,39,10,ES_AUTOHSCROLL
+	
+
+END
+
+IDD_TESTPARAMS DIALOG DISCARDABLE  0, 0, 298, 148
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Parameter settings"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,182,124,50,14
+    PUSHBUTTON      "取消",IDCANCEL,238,124,50,14
+    GROUPBOX        "分类目录",IDC_STATIC,11,9,276,50
+    LTEXT           "分类文档目录:",IDC_STATIC,16,24,53,8
+    LTEXT           "分类结果目录:",IDC_STATIC,16,41,53,8
+    EDITTEXT        IDC_TXT_TEST_DIR,70,19,189,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TXT_RESULT,70,39,189,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_TEST,264,20,17,14
+    PUSHBUTTON      "...",IDC_BTN_RESULTS,264,39,17,14
+    GROUPBOX        "分类方式",IDC_STATIC,11,62,119,27
+    CONTROL         "单类分类",IDC_CLASSIFYTYPE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,15,75,48,10
+    CONTROL         "多类分类",IDC_MULTI,"Button",BS_AUTORADIOBUTTON,72,75,
+                    48,10
+    GROUPBOX        "算法参数",IDC_STATIC,134,62,154,58
+    LTEXT           "KNN算法的K近邻值:",IDC_STATIC,141,77,69,8
+    LTEXT           "多类分类的相似度阈值:",IDC_STATIC,141,97,85,8
+    EDITTEXT        IDC_EDIT_KNN,232,75,50,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_THRESHOLD,232,95,40,14,ES_AUTOHSCROLL
+    LTEXT           "%",IDC_STATIC,276,98,8,8
+    GROUPBOX        "评价分类结果",IDC_STATIC,11,91,119,28
+    CONTROL         "评价分类结果(需要答案)",IDC_EVALUATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,102,104,10
+    CONTROL         "目录格式",IDC_DOCFORMAT,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE | WS_GROUP,15,122,48,10
+END
+
+IDD_SVMPARAMS DIALOG DISCARDABLE  0, 0, 324, 235
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SVM Parameter settings"
+FONT 9, "宋体"
+BEGIN
+    GROUPBOX        "Learning",IDC_STATIC,11,7,135,82
+    LTEXT           "C:",IDC_STATIC,15,21,9,8
+    LTEXT           "cost-factor:",IDC_STATIC,13,40,49,8
+    EDITTEXT        IDC_EDIT_C1,66,19,73,14,ES_AUTOHSCROLL
+    CONTROL         "Remove inconsistent examples",IDC_CHECK_I,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,71,128,10
+    CONTROL         "Use biased hyperplane",IDC_CHECK_B,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,56,100,10
+    EDITTEXT        IDC_EDIT_J,66,37,73,14,ES_AUTOHSCROLL
+    GROUPBOX        "Kernal",IDC_STATIC,153,7,157,81
+    LTEXT           "Kernel:",IDC_STATIC,164,23,29,8
+    LTEXT           "d",IDC_STATIC,165,40,8,8
+    LTEXT           "g",IDC_STATIC,236,40,8,8
+    LTEXT           "c",IDC_STATIC,236,56,8,8
+    LTEXT           "User Define",IDC_STATIC,165,73,45,8
+    EDITTEXT        IDC_EDIT_D,178,38,50,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDIT_G,249,38,50,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDIT_S,176,54,50,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDIT_C,249,54,50,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDIT_U,218,71,82,14,ES_AUTOHSCROLL | WS_DISABLED
+    COMBOBOX        IDC_COMBO_T,196,21,104,72,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "s",IDC_STATIC,165,56,8,8
+    GROUPBOX        "Performance",IDC_STATIC,11,89,146,102
+    CONTROL         "Compute leave-one-out estimates",IDC_CHECK_X,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,103,140,10
+    EDITTEXT        IDC_EDIT_O,15,119,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_K,15,140,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_P,15,162,40,14,ES_AUTOHSCROLL
+    LTEXT           "Rho",IDC_STATIC,65,122,55,8
+    LTEXT           "Search Depth",IDC_STATIC,65,143,49,8
+    LTEXT           "Transduction Fraction",IDC_STATIC,65,164,85,8
+    GROUPBOX        "Optimize",IDC_STATIC,163,89,148,133
+    EDITTEXT        IDC_EDIT_Q,167,103,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_N,167,125,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_M,167,147,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_E,167,169,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_H,167,191,40,14,ES_AUTOHSCROLL
+    LTEXT           "max size of subproblems ",IDC_STATIC,212,106,97,8
+    LTEXT           "number of new variables",IDC_STATIC,212,128,93,8
+    LTEXT           "cache size",IDC_STATIC,212,150,41,8
+    LTEXT           "iteration time",IDC_STATIC,212,194,57,8
+    LTEXT           "epson",IDC_STATIC,213,173,21,8
+    CONTROL         "Final Check",IDC_FINAL_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,243,173,60,10
+    GROUPBOX        "Multi-Classification",IDC_STATIC,12,191,145,31
+    CONTROL         "one-vs-rest",IDC_RADIO_CLASSIFIER_TYPE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,17,205,60,10
+    CONTROL         "one-vs-one",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,89,
+                    205,56,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "TextClassify Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "TextClassify\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2007\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "TextClassify.EXE\0"
+            VALUE "ProductName", "TextClassify 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_WORDSEG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 294
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_TRAINPARAMS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+
+    IDD_TESTPARAMS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 291
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 141
+    END
+
+    IDD_SVMPARAMS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 317
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 228
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SVMPARAMS DLGINIT
+BEGIN
+    IDC_COMBO_T, 0x403, 11, 0
+0x3a30, 0x6c20, 0x6e69, 0x6165, 0x2072, "\000" 
+    IDC_COMBO_T, 0x403, 27, 0
+0x3a31, 0x7020, 0x6c6f, 0x6e79, 0x6d6f, 0x6169, 0x206c, 0x7328, 0x7828, 
+0x792a, 0x2b29, 0x2963, 0x645e, "\000" 
+    IDC_COMBO_T, 0x403, 24, 0
+0x3a32, 0x7220, 0x6662, 0x6520, 0x7078, 0x2d28, 0x7c67, 0x787c, 0x742d, 
+0x7c7c, 0x325e, 0x0029, 
+    IDC_COMBO_T, 0x403, 26, 0
+0x3a33, 0x7320, 0x6769, 0x6f6d, 0x6469, 0x7420, 0x6e61, 0x2868, 0x2873, 
+0x2a78, 0x2979, 0x632b, 0x0029, 
+    IDC_COMBO_T, 0x403, 19, 0
+0x3a34, 0x7520, 0x6573, 0x2072, 0x6564, 0x6966, 0x656e, 0x2064, 0x2020, 
+"\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "TextClassify\n\nTextCl\n\n\nTextClassify.Document\nTextCl Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "TextClassify"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "建立新文档\n新建"
+    ID_FILE_OPEN            "打开一个现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "将活动文档以一个新文件名保存\n另存为"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开该文档"
+    ID_FILE_MRU_FILE2       "打开该文档"
+    ID_FILE_MRU_FILE3       "打开该文档"
+    ID_FILE_MRU_FILE4       "打开该文档"
+    ID_FILE_MRU_FILE5       "打开该文档"
+    ID_FILE_MRU_FILE6       "打开该文档"
+    ID_FILE_MRU_FILE7       "打开该文档"
+    ID_FILE_MRU_FILE8       "打开该文档"
+    ID_FILE_MRU_FILE9       "打开该文档"
+    ID_FILE_MRU_FILE10      "打开该文档"
+    ID_FILE_MRU_FILE11      "打开该文档"
+    ID_FILE_MRU_FILE12      "打开该文档"
+    ID_FILE_MRU_FILE13      "打开该文档"
+    ID_FILE_MRU_FILE14      "打开该文档"
+    ID_FILE_MRU_FILE15      "打开该文档"
+    ID_FILE_MRU_FILE16      "打开该文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预阅"
+    ID_INDICATOR_TIME       "耗时00:00:00"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MAIN_TRAINKNN        "对指定目录下的文档进行训练，形成一个KNN分类器模型"
+    ID_MAIN_TRAINSVM        "对指定目录下的文档进行训练，形成一个SVM分类器模型"
+    ID_TOOLS_WORDSEG        "对指定的文档或指定目录下的文档进行分词"
+    ID_MAIN_OPENMODEL       "打开一个已有的分类模型文件"
+    ID_MAIN_TEST            "对指定目录下的文档进行测试"
+    ID_MAIN_RESULTS         "查看分类的结果"
+    ID_MAIN_TRAINBAYES      "对指定目录下的文档进行训练，形成一个BAYES分类器模型"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    sdf                     "对指定目录下的文档进行测试"
+END
+
+#endif    // Chinese (中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\TextClassify.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

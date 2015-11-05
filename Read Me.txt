@@ -1,0 +1,5 @@
+1. The decision tree is implemented by Java language.
+2. The SVM Classifer is implemented by MFC. It is better to run it on Win XP or Win7.
+3. Each folder of data contains two files as input to SVM Classifer: Shift and notShift
+4. In the "Labeled Comment", "n" means not shift, "s" means shift.
+Yingcheng Sun

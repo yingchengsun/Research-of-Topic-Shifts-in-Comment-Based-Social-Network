@@ -1,0 +1,5 @@
+comment quantity: 1428
+community: yahoo
+News type: Sports
+Popularity: popular
+News topic: San Antonio downs the Miami Heat in Game 5, wins the 2013-14 NBA championship

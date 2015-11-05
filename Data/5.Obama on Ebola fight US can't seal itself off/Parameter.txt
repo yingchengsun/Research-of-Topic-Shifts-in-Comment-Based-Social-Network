@@ -1,0 +1,5 @@
+comment quantity: 4329
+community: yahoo
+News type: Health
+Popularity: popular
+News topic: Obama on Ebola fight: US can't seal itself off
